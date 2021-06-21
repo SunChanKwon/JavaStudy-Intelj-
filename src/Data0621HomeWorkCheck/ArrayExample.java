@@ -1,4 +1,4 @@
-package Data0621;
+package Data0621HomeWorkCheck;
 
 import java.util.Scanner;
 
