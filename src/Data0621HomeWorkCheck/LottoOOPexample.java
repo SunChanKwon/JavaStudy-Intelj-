@@ -59,7 +59,7 @@ public class LottoOOPexample {
         //y도 아니고 n도 아니면 다시한다 1.y 2.n 3.다시
         //Y:계속. N종료 ,그외다시 질문을 다시해야하니깐 반복이된다.
     }
-    public void lottoStart() {
+    public void lottoStart() {//제발
         do {
             int game=0; //전역변수를 통해서 값을 전달될수있는 값을 추가
             System.out.print("게임수=");

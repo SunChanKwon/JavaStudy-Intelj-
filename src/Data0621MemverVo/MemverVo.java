@@ -50,6 +50,11 @@ public class MemverVo {
     public void setSal(int sal) {
         this.sal = sal;
     }
+
+    //출력하는 메소드
+    public void MemberPrint(){
+        System.out.println("1.이름:"+name+ ": 2. 부서명:" +depart+ ": 3. 입사일:" +hire+": 4. 급여:"+sal);
+    }
 }
 
 
