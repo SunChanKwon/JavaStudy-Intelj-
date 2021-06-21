@@ -12,7 +12,7 @@ public class ArrayListTest {
         lst.remove(0);
         for (int i = 0; i < lst.size(); i++) {
             MemverVo vo = lst.get(i);
-          vo.MemberPrint();
+          vo.MemberPrint();//asdf
         }
     }
 
