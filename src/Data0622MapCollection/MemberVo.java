@@ -1,6 +1,6 @@
-package Data0621MemverVo;
+package Data0622MapCollection;
 
-public class MemverVo {
+public class MemberVo {
 
     //캡슐화 시켜서 다른곳에서 이동시지 못하게함
     private String name;
@@ -8,14 +8,14 @@ public class MemverVo {
     private String hire;
     private int sal;
 
-    public MemverVo() {
+    public MemberVo() {
 
     }
-    public MemverVo(String name, String depart, String hire, int sal)
-    {
+
+    public MemberVo(String name, String depart, String hire, int sal) {
         this.name = name;
         this.depart = depart;
-        this.hire =hire;
+        this.hire = hire;
         this.sal = sal;
     }
 
@@ -52,9 +52,15 @@ public class MemverVo {
     }
 
     //출력하는 메소드
-    public void MemberPrint(){
-        System.out.println("1.이름:"+name+ ": 2. 부서명:" +depart+ ": 3. 입사일:" +hire+": 4. 급여:"+sal);
+    public void MemberPrint() {
+        System.out.println("1.이름:" + name + ": 2. 부서명:" + depart + ": 3. 입사일:" + hire + ": 4. 급여:" + sal);
     }
+
+    public String toString() {
+        String memberData = name+","+depart+","+hire+","+sal;
+        return  memberData;
+    }
+
 }
 
 

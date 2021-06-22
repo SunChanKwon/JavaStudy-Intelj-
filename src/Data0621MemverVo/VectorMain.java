@@ -16,13 +16,13 @@ public class VectorMain {
 
         Calendar ccc =(Calendar) vvv.get(1);
         Integer iii = (Integer) vvv.get(2);
-        MemverVo Member= (MemverVo) vvv.get(3);
+        MemberVo Member= (MemberVo) vvv.get(3);
 
         System.out.println("Name:"+Name); //받아온 값을 넘겨받는다
         System.out.println("Name1:"+Name1); //받아온 값을 넘겨받는다
         System.out.println("ccc:"+ccc); //받아온 값을 넘겨받는다
         System.out.println("iii:"+iii); //받아온 값을 넘겨받는다
-        MemverVo vo = (MemverVo)vvv.elementAt(3);
+        MemberVo vo = (MemberVo)vvv.elementAt(3);
         vo.MemberPrint();
 
     }
