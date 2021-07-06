@@ -1,4 +1,4 @@
-package F0617.ProTected;
+package Data0617.ProTected;
 
 public class ProtectedTest {
     protected  int num=2134;

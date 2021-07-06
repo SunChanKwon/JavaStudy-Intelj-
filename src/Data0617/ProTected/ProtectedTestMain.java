@@ -1,7 +1,7 @@
-package F0617.ProTected;
+package Data0617.ProTected;
 
 
-import F0617.ProtectedTest2;
+import Data0617.ProtectedTest2;
 
 public class ProtectedTestMain extends ProtectedTest2{
     ProtectedTestMain()

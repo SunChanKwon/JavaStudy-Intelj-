@@ -1,4 +1,4 @@
-package F0617;
+package Data0617;
 
 
 class atest1 {

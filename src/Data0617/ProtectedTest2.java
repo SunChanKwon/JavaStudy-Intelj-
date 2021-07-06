@@ -1,4 +1,4 @@
-package F0617;
+package Data0617;
 
 public class ProtectedTest2 {
     protected String tel = "010-2740-7662";
