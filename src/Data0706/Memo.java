@@ -35,7 +35,7 @@ public class Memo extends JFrame implements ActionListener {
         setSize(700,700);
         setVisible(true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        newMenuItem.addActionListener(this);
+        newMenuItem.addActionListener(this);//asdf
         openMenuItem.addActionListener(this);
         saveMenuItem.addActionListener(this);
         endMenuItem.addActionListener(this);
