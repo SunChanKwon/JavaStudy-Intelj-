@@ -20,7 +20,7 @@ public GraphicsTest()
         public MyCanvas(){
         System.out.println("MyCanvas");
         }
-    }
+    }//asdfasfd
     public void paint(Graphics g)
     {
         //그림을 글린다.
