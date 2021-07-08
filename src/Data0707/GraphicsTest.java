@@ -12,7 +12,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-
 public class GraphicsTest extends JFrame implements ActionListener{
     JPanel pane = new JPanel();
     JButton btn1 = new JButton("원본이미지");
@@ -54,7 +53,8 @@ public class GraphicsTest extends JFrame implements ActionListener{
 
     public class MyCanvas extends Canvas{
         public MyCanvas() {
-            img = Toolkit.getDefaultToolkit().getImage("img/1.jpg");
+
+            img = Toolkit.getDefaultToolkit().getImage("img/Man.jpg");
         }
         public void paint(Graphics g) {
             //원본 이미지 그림을 그린다.
@@ -99,3 +99,4 @@ public class GraphicsTest extends JFrame implements ActionListener{
     }
 
 }
+

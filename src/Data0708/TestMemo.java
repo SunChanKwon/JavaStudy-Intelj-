@@ -30,21 +30,41 @@ public class TestMemo extends JFrame implements ActionListener,Serializable{
    public TestMemo() throws IOException {
 
        setJMenuBar(mb);
-       mb.add(fileMenu);mb.add(editMenuItem);mb.add(runMeun);
+       mb.add(fileMenu);
+       mb.add(editMenuItem);
+       mb.add(runMeun);
 
-       fileMenu.add(newMenuItem);fileMenu.add(openMenuItem);fileMenu.add(saveMenuItem); fileMenu.addSeparator(); fileMenu.add(endMenuItem);
+       fileMenu.add(newMenuItem);
+       fileMenu.add(openMenuItem);
+       fileMenu.add(saveMenuItem);
+       fileMenu.addSeparator();
+       fileMenu.add(endMenuItem);
        //----------------------------------------------------------------------------
 //----------------------------------------------------------------------------
-       editMenuItem.add(cutMenuItem); editMenuItem.add(copyMenuItem); editMenuItem.add(pastMenuItem);
+       editMenuItem.add(cutMenuItem);
+       editMenuItem.add(copyMenuItem);
+       editMenuItem.add(pastMenuItem);
 //----------------------------------------------------------------------------
-       runMeun.add(chromMenuItem);   runMeun.add(edtiplusMenuItem);
+       runMeun.add(chromMenuItem);
+       runMeun.add(edtiplusMenuItem);
        fileWrite();
        setShortCut();
-       File ff = new File("C://testFile/memoObject.txt");
+       File ff = new File("C://fileTest/memoObject.txt");
+       if (ff.exists()) {
+           try {
+               FileInputStream fis = new FileInputStream(ff);
+               ObjectInputStream ois = new ObjectInputStream(fis);
+               sp = (JScrollPane) ois.readObject();
+               add(sp);
+           } catch (Exception e) {
 
+           }
+       } else {
+           add(sp);
+       }
 
        add(sp);
-       setSize(700,700);
+       setSize(700, 700);
        setVisible(true);
        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
        newMenuItem.addActionListener(this);//asdf
@@ -56,22 +76,6 @@ public class TestMemo extends JFrame implements ActionListener,Serializable{
        pastMenuItem.addActionListener(this);
        chromMenuItem.addActionListener(this);
        edtiplusMenuItem.addActionListener(this);
-       if(ff.exists())
-       {
-           try{
-               FileInputStream fis = new FileInputStream(ff);
-               ObjectInputStream ois = new ObjectInputStream(fis);
-               sp = (JScrollPane)ois.readObject();
-               add(sp);
-           }catch(Exception e)
-           {
-
-           }
-        }
-       else
-       {
-           add(sp);
-       }
    }
 
     @Override
@@ -79,6 +83,7 @@ public class TestMemo extends JFrame implements ActionListener,Serializable{
         Object event = e.getSource();
         if(event==endMenuItem)
         {
+            fileWrite();
             System.exit(0);
         }
         else if(event==newMenuItem)
@@ -108,7 +113,7 @@ public class TestMemo extends JFrame implements ActionListener,Serializable{
         }
         else if(event==chromMenuItem)
         {
-            processStart("C:/Program Files/Google/Chrome/pplication/chrome.exe");
+            processStart("C:/Program Files/Google/Chrome/application/chrome.exe");
         }
         else if(event==edtiplusMenuItem)
         {
@@ -118,7 +123,7 @@ public class TestMemo extends JFrame implements ActionListener,Serializable{
     public void fileWrite(){
 
         try{
-            File f = new File("C://testFile/memoObject.txt");
+            File f = new File("C://fileTest/memoObject.txt");
             FileOutputStream fos = new FileOutputStream(f);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(this);
@@ -148,7 +153,7 @@ public class TestMemo extends JFrame implements ActionListener,Serializable{
         ta.replaceSelection("");
     }
     public void fileSave(){
-        JFileChooser fc = new JFileChooser(new File("D:\\testFile"));
+        JFileChooser fc = new JFileChooser(new File("C://fileTest"));
         int state = fc.showSaveDialog(this);
 
         if(state==0) {
@@ -165,12 +170,12 @@ public class TestMemo extends JFrame implements ActionListener,Serializable{
     }
 
     public void fileOpen(){
-        JFileChooser fc = new JFileChooser(new File("D://testFile"));
+        JFileChooser fc = new JFileChooser(new File("C://fileTest"));
 
         fc.setMultiSelectionEnabled(true);
         //파이ㅣㄹ을 여러개 한번선택 가능하도록 설정하기 true:다중선택, false :1개 파일만 선택
 
-        FileFilter filter = new FileNameExtensionFilter("자바(*.java)","java","Java","JAVA","JaVa");
+        FileFilter filter = new FileNameExtensionFilter("자바(*.java)","java","Java","JAVA","JaVa","txt");
         fc.setFileFilter(filter);
 
         FileFilter filter2 = new FileNameExtensionFilter("텍스트","txt");

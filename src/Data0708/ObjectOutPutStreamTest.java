@@ -10,7 +10,7 @@ public class ObjectOutPutStreamTest {
 
         try
         {
-            File f= new File("c://fileTest/object.txt");
+            File f= new File("C://fileTest/object.txt");
             FileOutputStream fos = new FileOutputStream(f);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
