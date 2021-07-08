@@ -57,7 +57,6 @@ public class Memo extends JFrame implements ActionListener {
         {
             ta.setText("");
         }
-
     }
 
     public static void main(String[] args) {
