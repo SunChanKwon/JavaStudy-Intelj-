@@ -1,7 +1,5 @@
 package Data0708;
 
-import Data0706.Memo;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
@@ -12,13 +10,17 @@ public class ObjectOutPutStreamTest {
 
         try
         {
-            File f= new File("D://FileTest/object.txt");
+            File f= new File("c://fileTest/object.txt");
             FileOutputStream fos = new FileOutputStream(f);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-            Memo memo = new Memo();
+            TestMemo memo = new TestMemo();
 
-            
+            oos.writeObject(memo);
+
+            oos.close();
+            fos.close();
+            System.out.println("성공");
         }catch (Exception e)
         {
 

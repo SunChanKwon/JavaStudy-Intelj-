@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.*;
 
-public class NewMemoMeun extends JFrame implements ActionListener,Serializable{
+public class TestMemo extends JFrame implements ActionListener,Serializable{
     JMenuBar mb= new JMenuBar();
     JMenu fileMenu = new JMenu("파일");
     JMenuItem newMenuItem = new JMenuItem("새글");
@@ -27,7 +27,7 @@ public class NewMemoMeun extends JFrame implements ActionListener,Serializable{
     JScrollPane sp = new JScrollPane(ta);
 
     public static  String buffer;//오려두기 복사할경우 보관할 데이터를 보관할 변수수
-   public NewMemoMeun(){
+   public TestMemo() throws IOException {
 
        setJMenuBar(mb);
        mb.add(fileMenu);mb.add(editMenuItem);mb.add(runMeun);
@@ -40,6 +40,9 @@ public class NewMemoMeun extends JFrame implements ActionListener,Serializable{
        runMeun.add(chromMenuItem);   runMeun.add(edtiplusMenuItem);
        fileWrite();
        setShortCut();
+       File ff = new File("C://testFile/memoObject.txt");
+
+
        add(sp);
        setSize(700,700);
        setVisible(true);
@@ -53,6 +56,22 @@ public class NewMemoMeun extends JFrame implements ActionListener,Serializable{
        pastMenuItem.addActionListener(this);
        chromMenuItem.addActionListener(this);
        edtiplusMenuItem.addActionListener(this);
+       if(ff.exists())
+       {
+           try{
+               FileInputStream fis = new FileInputStream(ff);
+               ObjectInputStream ois = new ObjectInputStream(fis);
+               sp = (JScrollPane)ois.readObject();
+               add(sp);
+           }catch(Exception e)
+           {
+
+           }
+        }
+       else
+       {
+           add(sp);
+       }
    }
 
     @Override
@@ -205,8 +224,8 @@ public class NewMemoMeun extends JFrame implements ActionListener,Serializable{
         endMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.CTRL_MASK));
         openMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
     }
-    public static void main(String[] args) {
-        new NewMemoMeun();
+    public static void main(String[] args) throws IOException {
+        new TestMemo();
     }
 
 }
