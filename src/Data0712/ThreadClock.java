@@ -69,6 +69,9 @@ public class ThreadClock extends JFrame implements Runnable{
 //        ThreadClock dc3 = new ThreadClock(500,0);
 //        Thread t3 = new Thread(dc3);
 //        t3.start();
+        new ThreadClock(0,0);
+        new ThreadClock(500,0);
+        new ThreadClock(1000,0);
     }
 }
 
