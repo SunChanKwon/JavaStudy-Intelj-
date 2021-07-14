@@ -15,7 +15,7 @@ DigitalClock2 dc = new DigitalClock2(0,0); //새로운 객체 생성했다.
     SwingCul2 cal = new SwingCul2(); //시간 객체생성
    // SwingCal2 calendar = new SwingCal2();
     ImageIcon iii = new ImageIcon("img/3.jpg");
-    HomeWorkPickMan2 PM = new HomeWorkPickMan2();
+    //HomeWorkPickMan2 PM = new HomeWorkPickMan2();
 
     public JTabbedPaneTest(){
         super("탭메뉴");
@@ -26,12 +26,12 @@ DigitalClock2 dc = new DigitalClock2(0,0); //새로운 객체 생성했다.
         tp.addTab("레이블",lbl);
         tp.addTab("버튼",btn);
         tp.addTab("시계",dc);
-        tp.addTab("픽맨",PM);
+       // tp.addTab("픽맨",PM);
         tp.addTab("계산기",cal);
         //tp.addTab("달력",null,calendar,"달력");
 
 
-        add(tp);
+       // add(tp);
         setSize(500,500);
         setVisible(true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
