@@ -68,12 +68,15 @@ public class TableDataBaseHomeWork extends JFrame {
             try {
                 if (rs != null) {
                     rs.close();
+                    System.out.println("rs 객체가 없다");
                 }
                 if (pstmt != null) {
                     pstmt.close();
+                    System.out.println("pstmt 객체가 없다");
                 }
                 if (conn != null) {
                     conn.close();
+                    System.out.println("conn 객체가 없다");
                 }
             }catch (SQLException s) {
                 System.out.println("닫기 예외 발생함");
