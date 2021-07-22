@@ -23,7 +23,7 @@ public class InterAddressTest {
             System.out.println("nateIP->address-->"+nateIp.getHostAddress());
             System.out.println("nateIP->Name-->"+nateIp.getHostName());
 
-            
+
             System.out.println("--------------------------------------------");
             InetAddress[] ip = InetAddress.getAllByName("www.naver.com");
 
